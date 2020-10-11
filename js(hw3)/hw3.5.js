@@ -1,6 +1,13 @@
 function getAllPropValues(array, prop) {
   'use strict';
   // Write code under this line
+const stack = [];
+  for (const item of array) {
+    if (item[prop] !== undefined) {
+      stack.push(item[prop]);
+    }
+  }
+  return stack;
 }
 
 // Объекты и ожидаемый результат
@@ -14,13 +21,13 @@ const products = [
   { name: 'Захват', price: 1200, quantity: 2 },
 ];
 
-//console.log(getAllPropValues(products, 'name'));
+console.log(getAllPropValues(products, 'name'));
 // ['Радар', 'Радар', 'Радар', 'Сканер', 'Сканер', 'Дроид', 'Захват']
 
-//console.log(getAllPropValues(products, 'quantity'));
+console.log(getAllPropValues(products, 'quantity'));
 // [4, 2, 1, 1, 3, 7, 2]
 
-//console.log(getAllPropValues(products, 'category'));
+console.log(getAllPropValues(products, 'category'));
 //  []
 
 // /*Условие
@@ -32,4 +39,4 @@ const products = [
 // Функция возвращает массив значений определенного свойства prop из каждого объекта в массиве.
 
 // Используй метод push для добавления значения в массив 
-// и оператор in для проверки наличия свойства в объекте./*
+// и оператор in для проверки наличия свойства в объекте.
