@@ -4,13 +4,15 @@ const isEven = (element) => element % 2 === 0;
 function filterArray(array, cb) {
   'use strict';
   const numbers = [];
-  for(let i = 0; i < array.length; i += 1) {
+  for (let i = 0; i < array.length; i += 1) {
     const element = array[i];
     const index = i;
     // Write code under this line
-      if (cb[index] = array[i])
-          numbers.push(element)
+    if (cb(element, index, array)) {
+      numbers.push(element);
+    }
   }
+  
   return numbers;
 }
 
