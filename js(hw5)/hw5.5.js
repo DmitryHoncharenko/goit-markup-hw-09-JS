@@ -29,16 +29,14 @@ class Car {
         
     accelerate(value) {
         if (value + this.speed > this.maxSpeed) {
-            this.speed = this.maxSpeed;
-            return;
+            return this.speed = this.maxSpeed;
         }
         return this.speed += value;
     }
       
     decelerate(value) {
         if (value - this.speed > 0) {
-            this.speed = 0;
-            return;
+           return this.speed = 0;
         }
         return this.speed -= value;
     }
@@ -46,10 +44,7 @@ class Car {
     drive(hours) {
         this.isOn = true;
         this.distance += hours * this.speed;
-        
-       
     }
-    
 }
         
 const mustang = new Car({ maxSpeed: 200, price: 2000 });
